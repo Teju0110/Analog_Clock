@@ -2,37 +2,101 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root { 
+  --main-bg-color:#1e1f26;
+  --main-text-color:#ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 16px;
+  background-color: var(--main-bg-color);
+  position: relative;
+  transition: all ease 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.App{
+  min-height: 18em;
+  min-width: 18em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 8px solid #03D8FF;
+  transition:  all ease 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App::before{
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: var(--main-text-color);
+  border: 2 px solid var(--main-bg-color);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all ease 0.2s;
+}
+
+.hour,
+.min,
+.sec{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.hour{
+  height: 10rem;
+  width: 10rem;
+}
+
+.hour::before{
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 6px;
+  background-color: var(--main-text-color);
+  border-radius: 6px;
+}
+
+.min{
+  height: 12rem;
+  width: 12rem;
+}
+
+.min::before{
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 4px;
+  background-color: var(--main-text-color);
+  border-radius: 4px;
+}
+
+.sec{
+  height: 13rem;
+  width: 13rem;
+  
+}
+
+.sec::before{
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  background-color: var(--main-text-color);
+  border-radius: 2px;
 }
